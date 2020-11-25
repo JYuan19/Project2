@@ -1,9 +1,8 @@
 # Project II
 <br />
 <div align="center">
-  <a href="https://github.com/JYuan19/Project2/graphs/commit-activity"><img src="https://img.shields.io/github/stars/elangosundar/awesome-README-templates" alt="Commit"/></a>
-  <a href="https://github.com/JYuan19/Project2/network/members"><img src="https://img.shields.io/github/forks/elangosundar/awesome-README-templates" alt="Forks Badge"/></a>
-  <a href="https://github.com/JYuan19/Project2/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/elangosundar/awesome-README-templates?color=2b9348"></a>
+  <a href="https://github.com/JYuan19/Project2/network/members"><img src="https://img.shields.io/github/forks/JYuan19/Project2" alt="Forks Badge"/></a>
+  <a href="https://github.com/JYuan19/Project2/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/JYuan19/Project2?color=2b9348"></a>
 </div>
 <br />
 
