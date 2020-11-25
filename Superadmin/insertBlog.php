@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <input name="Email" value="<?php echo $_SESSION['Email'] ?>" style="display: none;">
-                        <input name="Author" value="<?php echo $_SESSION['SuperadminName'] ?>" style="display: none;">
+                        <input name="Author" value="<?php echo $_SESSION['Name'] ?>" style="display: none;">
                         
                         <div class="form-group">
                         <div class="row ml-1">
