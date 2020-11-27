@@ -12,7 +12,7 @@ if($result->num_rows>0){
      $_SESSION['msg']=$row['msg'];
      $_SESSION['time_date']=$row['time_date'];
      
-}
+  }
 }else{
   $_SESSION['custorder_id']='';
   $_SESSION['order_id']='';
@@ -29,7 +29,7 @@ $gtotal = 0;
     $quantity = $values["food_quantity"];
     $price =  $values["food_price"];
     $total = ($values["food_quantity"] * $values["food_price"]);
-    $email=$_SESSION['userEmail'];
+    $email= $_SESSION['userEmail-foodtiger'];
     $cust_id= $_SESSION['order_id'];
     $date_time=$_SESSION['time_date'];
     $order_id= $_SESSION['order_id'];
