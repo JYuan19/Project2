@@ -103,7 +103,7 @@ if (isset($_SESSION['Email'])) {
                                 </li>
                                 <li class="nav-item">
                                     <a href="../requestJob.php" class="nav-link text-light p-3 mb-2 sidebar-link"> <i class="fa fa-motorcycle text-light fa-lg mr-3" aria-hidden="true"></i>
-                                    Request Jobs List
+                                    Apply Jobs List
                                     </a>
                                 </li>
                                 <li class="nav-item">

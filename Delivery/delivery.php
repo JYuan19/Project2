@@ -62,7 +62,8 @@
                 <table class="table table-striped table-bordered table-list" style="box-shadow: 5px 7px 25px #999;">
                   <thead>
                     <tr>
-                        <th>Name</th>          
+                        <th>Order ID</th>    
+                        <th>Name</th>       
                         <th>Address</th> 
                         <th>Contact Number</th>
                     </tr> 
@@ -73,7 +74,8 @@
                         while($row = $result->fetch_assoc()) { 
                     ?> 
                     <tr>
-                      <td><a class="btn btn-warning" href ="deliverydetail.php?id=<?php echo $row['id'];?>"><?php echo $row['Name'];?></a></td>
+                      <td><a class="btn btn-warning" href ="deliverydetail.php?id=<?php echo $row['id'];?>"><?php echo $row['order_id'];?></a></td>
+                      <td><?php echo $row['Name']; ?></td>
                       <td><?php echo $row['Address'];?></td>
                       <td><?php echo $row['PhoneNo'];?></td>
                     </tr>

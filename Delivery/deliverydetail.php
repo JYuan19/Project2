@@ -10,7 +10,8 @@ $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
 
 if(isset($_GET['id'])){
 	$id=$_GET['id']; 
-	$sql="select * from payment where id ='$id'";
+    $sql="select payment.id, payment.order_id, payment.email, payment.Name, payment.PhoneNo, payment.Address, payment.price, payment.time_date, payment.payment_way ,payment.status, payment.receive, cus_order.msg 
+    FROM payment LEFT JOIN cus_order ON payment.order_id = cus_order.order_id ORDER BY payment.id = '$id'";
 	$result=$conn->query($sql);
 	if($result->num_rows>0){
 		while($row=$result->fetch_assoc()){
@@ -49,7 +50,7 @@ if(isset($_GET['id'])){
     <div class="col-lg-9 col-xl-10 col-md-8 ml-auto fixed-top py-2 top-navbar" style="background-color: #ffbf55;">
       <div class="row align-items-center">
         <div class="col-md-9">
-          <h4 class="text-light text-uppercase mb-0">Delivery List</h4>
+          <h4 class="text-light text-uppercase mb-0">Delivery Detail</h4>
         </div>
         <div class="col-md-3">
           <ul class="navbar-nav">
@@ -112,6 +113,15 @@ if(isset($_GET['id'])){
 
                     <div class="form-group">
                         <div class="row">
+                            <label for="Payment Way" class="col-md-3 control-label">Payment Method:</label>
+                            <div class="col-md-9">
+                                <h5><?php if (isset($_GET['id'])){echo $payment_way; }?></h5>
+                            </div>
+                        </div>    
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
                             <label for="Status" class="col-md-3 control-label">Status:</label>
                             <div class="col-md-9">
                                 <h5><?php if (isset($_GET['id'])){echo $status; }?></h5>
@@ -124,6 +134,15 @@ if(isset($_GET['id'])){
                             <label for="Message" class="col-md-3 control-label">Message:</label>
                             <div class="col-md-9">
                                 <h5><?php if (isset($_GET['id'])){echo $msg; }?></h5>
+                            </div>
+                        </div>    
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <label for="Time_Date" class="col-md-3 control-label">Time & Date:</label>
+                            <div class="col-md-9">
+                                <h5><?php if (isset($_GET['id'])){echo $time_date; }?></h5>
                             </div>
                         </div>    
                     </div>

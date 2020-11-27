@@ -4,7 +4,7 @@ session_start();
 $f_id = $_SESSION["food_id"];
 $connect = new PDO('mysql:host=localhost;dbname=foodtiger', 'root', '');
 $query = "
-    SELECT * FROM comment 
+    SELECT * FROM review 
     WHERE food_id = '".$f_id."'
     ORDER BY comment_id DESC
 ";

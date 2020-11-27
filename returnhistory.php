@@ -27,10 +27,10 @@ if(!isset($_SESSION['userEmail-foodtiger']))
         ?>        
     </header>
     <?php
-if(isset($_SESSION['userEmail-foodtiger']))
-{
-require "chat.php";
-}    
+      if(isset($_SESSION['userEmail-foodtiger']))
+      {
+        require "chat.php";
+      }    
       ?>
     <div class="container" style="margin-top:100px;">
       <div class="row">

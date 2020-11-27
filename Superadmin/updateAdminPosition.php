@@ -43,7 +43,7 @@
         <div class="col-lg-9 col-xl-10 col-md-8 ml-auto fixed-top py-2 top-navbar" style="background-color: #ffbf55;">
             <div class="row align-items-center">
                 <div class="col-md-9">
-                    <h4 class="text-light text-uppercase mb-0">Edit Admin </h4>
+                    <h4 class="text-light text-uppercase mb-0">Edit Worker</h4>
                 </div>
                 <div class="col-md-3">
                     <ul class="navbar-nav">
@@ -73,7 +73,7 @@
                             <div class="form-group">
                                 <label for="Position" class="col-md-3">Positon:</label>
                                 <div class="col-md-9">
-                                    <select name="Position"  class="form-control" style="height:30px;">
+                                    <select name="Position"  class="form-control" style="height:auto;">
                                         <option value="<?php if (isset($_GET['ad_id'])){echo $Position; }?>"><?php if (isset($_GET['ad_id'])){echo $Position; }?></option>
                                             <option value="Admin">Admin</option>
                                             <option value="Deliver Man">Deliver Man</option>

@@ -14,7 +14,7 @@ $query->execute();
 $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
 if(isset($_GET['order_id'])){
 	$order_id=$_GET['order_id']; 
-  $sql="SELECT * FROM returnorder LEFT JOIN payment ON returnorder.order_id = payment.order_id ORDER BY returnorder.order_id = '$order_id'";
+  $sql="SELECT * FROM returnorder LEFT JOIN payment ON returnorder.order_id = payment.order_id LEFT JOIN cus_order ON returnorder.order_id = cus_order.order_id ORDER BY returnorder.order_id = '$order_id'";
 	$result=$conn->query($sql);
 	if($result->num_rows>0){
 		while($row=$result->fetch_assoc()){

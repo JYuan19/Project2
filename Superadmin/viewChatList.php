@@ -79,7 +79,8 @@
                                 <tbody>
                                     <tr>
                                         <?php 
-                                            while($row = mysqli_fetch_array($result)) {     
+                                            if ($result->num_rows > 0) {
+                                                while($row = $result->fetch_assoc()) {      
                                         ?>
                                         <td><?php echo $row['Name'];?></td>
                                         <td><?php echo $row['Email'];?></td> 
@@ -91,6 +92,10 @@
                                     </tr>
                                         <?php
                                             }
+                                        }
+                                        else { 
+                                            echo "<tr><td class='text-center' colspan='7' >No chat yet </td></tr>";
+                                          }
                                         ?>
                                 </tbody>
                             </table>

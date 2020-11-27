@@ -54,7 +54,7 @@
                         <div class="form-group">
                             <label for="Position" class="col-md-3 control-label">Positon:</label>
                             <div class="col-md-9">
-                                <select name="Position"  class="form-control" style="height:5%;">
+                                <select name="Position"  class="form-control" style="height:auto;">
                                     <option value="Admin">Admin</option>
                                 </select>
                             </div>

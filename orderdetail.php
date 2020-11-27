@@ -8,13 +8,15 @@ require('database/connection.php');
 require('database/pdo.php');
 $Email = $_SESSION['Email'];
 require('database/mysql.php');
-$sql = 'SELECT orders.cust_id, orders.foodname,orders.price,orders.quantity, payment.order_id FROM orders LEFT JOIN cus_order ON orders.cust_id = cus_order.custorder_id LEFT JOIN payment ON cus_order.order_id = payment.order_id';
+$sql = 'SELECT orders.cust_id, orders.foodname,orders.price,orders.quantity, payment.order_id 
+FROM orders LEFT JOIN cus_order ON orders.cust_id = cus_order.custorder_id LEFT JOIN payment ON cus_order.order_id = payment.order_id';
 $query  = $pdoconn->prepare($sql);
 $query->execute();
 $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
 if(isset($_GET['order_id'])){
 	$order_id=$_GET['order_id']; 
-	$sql="select * from payment where order_id ='$order_id'";
+  $sql="select payment.id, payment.order_id, payment.email, payment.Name, payment.PhoneNo, payment.Address, payment.payment_way, payment.price, payment.time_date, payment.status, payment.receive, cus_order.msg 
+  FROM payment LEFT JOIN cus_order ON cus_order.order_id = payment.order_id ORDER BY payment.order_id = '$order_id'";
 	$result=$conn->query($sql);
 	if($result->num_rows>0){
 		while($row=$result->fetch_assoc()){

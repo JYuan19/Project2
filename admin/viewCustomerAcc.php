@@ -79,7 +79,8 @@
                     <tbody>
                       <tr>
                         <?php 
-                          while($row = mysqli_fetch_array($result)) {     
+                          if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {     
                         ?>
                         <td align="center">
                           <a class="btn btn-danger" href="editAcc.php?Email=<?php echo $row['Email']; ?>" onclick="return confirm('Sure Want Delete?')"><span class="new badge" ><em class="fa fa-trash"></em></span></a>
@@ -91,6 +92,10 @@
                       </tr>
                       <?php
                           }
+                        }
+                        else { 
+                          echo "<tr><td class='text-center' colspan='7' >No customer account yet </td></tr>";
+                        }
                       ?>
                     </tbody>
                   </table>        

@@ -68,7 +68,7 @@ if (isset($_SESSION['adminEmail'])) {
                                     <td><h4 style="font-weight: lighter;float:left;"><?php echo $Email ?></h4></td>
                                 </tr>
                                 <tr>
-                                    <td><h4>Phone Number: </h4></td>
+                                    <td><h4>Position: </h4></td>
                                     <td><h4 style="font-weight: lighter;float:left;"><?php echo $Position ?></h4></td>
                                 </tr>
                             </tbody>

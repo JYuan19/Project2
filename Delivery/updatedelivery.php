@@ -19,4 +19,5 @@
 	$result=$conn->query($sql);
  	echo "<script>window.location.assign('delivery.php');</script>";
 }
+?>
 

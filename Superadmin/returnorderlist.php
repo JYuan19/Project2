@@ -58,7 +58,7 @@
               <table class="table table-striped table-bordered table-list" style="box-shadow: 5px 7px 25px #999;">
                 <thead>
                   <tr>
-                    <th>Order_id</th>        
+                    <th>Order ID</th>        
                     <th>Name</th>   
                     <th>Reason</th>
                     <th>Image</th>

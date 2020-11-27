@@ -48,7 +48,7 @@
         <div class="col-lg-9 col-xl-10 col-md-8 ml-auto fixed-top py-2 top-navbar" style="background-color: #ffbf55;">
             <div class="row align-items-center">
                 <div class="col-md-9">
-                    <h4 class="text-light text-uppercase mb-0">Update Food</h4>
+                    <h4 class="text-light text-uppercase mb-0">Edit Food</h4>
                 </div>
                 <div class="col-md-3">
                     <ul class="navbar-nav">

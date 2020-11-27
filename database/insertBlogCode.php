@@ -47,3 +47,5 @@
     } else {
 		echo "<script>alert('Invalid !'); window.location.assign('../Superadmin/insertBlog.php');</script>";
     }
+
+?>

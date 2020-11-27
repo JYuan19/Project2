@@ -160,7 +160,7 @@ $_SESSION["food_id"] = $f_id;
             event.preventDefault();
             var form_data = $(this).serialize();
             $.ajax({
-            url:"add_comment.php",
+            url:"add_review.php",
             method:"POST",
             data:form_data,
             dataType:"JSON",
@@ -182,7 +182,7 @@ $_SESSION["food_id"] = $f_id;
         function load_comment()
         {
             $.ajax({
-            url:"fetch_comment.php",
+            url:"show_review.php",
             method:"POST",
             success:function(data)
             {

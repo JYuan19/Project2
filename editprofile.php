@@ -106,7 +106,7 @@ else {
         ?>
     </header>
     <div class="imgcontainer">
-      <img src="image/avatar6.png" alt="Avatar" class="avatar">
+      <img src="image/avatar6.png" alt="Avatar" class="avatar" style="width:200px">
     </div>
 
     <div class="container">

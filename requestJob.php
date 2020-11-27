@@ -66,10 +66,10 @@ session_start();
                 <div class="form-group">
                     <label for="years" class="col-md-6 control-label">Are you 18 years or older?</label>
                     <div class="col-md-12">
-                        <input type="radio" id="years" name="years" value="above">
-                        <label for="above"> Yes</label><br>
-                        <input type="radio" id="years" name="years" value="below">
-                        <label for="below"> No</label><br>                                    
+                        <input type="radio" id="years" name="years" value="Yes">
+                        <label for="Yes"> Yes</label><br>
+                        <input type="radio" id="years" name="years" value="No">
+                        <label for="No"> No</label><br>                                    
                     </div>
                 </div>
 

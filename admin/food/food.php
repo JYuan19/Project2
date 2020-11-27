@@ -67,7 +67,7 @@
       </div>
     </div>
               
-    <div class="container" style="margin-top:3%;margin-left:30%;">
+    <div class="container" style="margin-top:5%;margin-left:30%;">
       <div class="row">
           <div class="col-md-10 col-md-offset-1">
 
@@ -97,7 +97,8 @@
                     <tbody>
                             <tr>
                             <?php
-                              while($row = mysqli_fetch_array($result)) {
+                              if ($result->num_rows > 0) {
+                                while($row = $result->fetch_assoc()) {  
                             ?>
                               <td align="center">
                                 <a class="btn btn-default" href ="FoodList2.php? f_id=<?php echo $row['f_id'];?>"><em class="fa fa-pencil"></em></a>
@@ -110,7 +111,14 @@
                               <td><?php echo $row['price']; ?></td>
                             </tr>
                           </tbody>
-                              <?php } ?>
+                              <?php 
+                              } 
+                            }
+                            else { 
+                              echo "<tr><td class='text-center' colspan='7' >No food yet </td></tr>";
+                            }
+                              
+                              ?>
                   </table>        
                 </div>
                 <div class="panel-footer">

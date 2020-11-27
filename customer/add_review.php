@@ -30,15 +30,14 @@ else
 if($error == '')
 {
  $query = "
- INSERT INTO comment 
- (food_id, parent_comment_id, comment, comment_sender_name) 
- VALUES (:food_id, :parent_comment_id, :comment, :comment_sender_name)
+ INSERT INTO review 
+ (food_id, comment, comment_sender_name) 
+ VALUES (:food_id, :comment, :comment_sender_name)
  ";
  $statement = $connect->prepare($query);
  $statement->execute(
   array(
    ':food_id' => $_POST["food_id"],
-   ':parent_comment_id' => $_POST["comment_id"],
    ':comment'    => $comment_content,
    ':comment_sender_name' => $comment_name
   )

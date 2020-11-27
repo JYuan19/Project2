@@ -71,13 +71,13 @@ if(isset($_GET['order_id'])){
                 <input name="foodUpload" type="file"  id="image"  onchange="displayImage(this)" style="display: none;" required> 
 
                 <input type="hidden" name="statusreturn" id="statusreturn" value="Pending" style="display: none;"> 
-                
+                <br>
                 <div class="form-group">   
                     <div class="row ml-1">                                   
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <button type="submit" name="insert" id="insert" class="btn btn-info btn-block"><i class="icon-hand-right"></i>Apply</button>   
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <a href="orderdetail.php?order_id=<?php echo $order_id;?>" class="btn btn-info btn-block btn-danger">Cancel</a>
                         </div>
                     </div>

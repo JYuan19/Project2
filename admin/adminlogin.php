@@ -8,39 +8,37 @@
       $Password = $_POST['Password'];
       mysqli_real_escape_string($conn, $Email);
       mysqli_real_escape_string($conn, $Password);
-    $query = "SELECT * FROM admin WHERE Email = '$Email'";
-    $result = mysqli_query($conn , $query) or die (mysqli_error($conn));
-    if (mysqli_num_rows($result) > 0) {
-      while ($row = mysqli_fetch_array($result)) {
-        $cus_id = $row['ad_id'];
-        $Name = $row['Name'];
-        $Email = $row['Email'];
-        $pass = $row['Password'];
-
-    
-        if (password_verify($Password, $pass )) {
-          $_SESSION['ad_id'] = $cus_id;
-          $_SESSION['Name'] = $Name;
-          $_SESSION['Email'] = $Email;
-          $_SESSION['adminName'] = $row['Name'];
-          $_SESSION['adminEmail'] = $row['Email'];
-          header('location: adminhome.php');
-        }
-        else {
-          echo "<script>alert('invalid username/password !');
-          window.location.href= 'adminlogin.php';</script>";
-
-        }
-      }
-    }
-    else {
-          echo "<script>alert('invalid username/password');
-          window.location.href= 'adminlogin.php';</script>";
-
-        }
-    }
+      $query = "SELECT * FROM admin WHERE Email = '$Email' AND (Position = 'Admin' OR Position = 'Super Admin')";
+      $result = mysqli_query($conn , $query) or die (mysqli_error($conn));
+      if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_array($result)) {
+          $cus_id = $row['ad_id'];
+          $Name = $row['Name'];
+          $Email = $row['Email'];
+          $pass = $row['Password'];
 
       
+          if (password_verify($Password, $pass )) {
+            $_SESSION['ad_id'] = $cus_id;
+            $_SESSION['Name'] = $Name;
+            $_SESSION['Email'] = $Email;
+            $_SESSION['adminName'] = $row['Name'];
+            $_SESSION['adminEmail'] = $row['Email'];
+            header('location: adminhome.php');
+          }
+          else {
+            echo "<script>alert('invalid username/password !');
+            window.location.href= 'adminlogin.php';</script>";
+
+          }
+        }
+      }
+      else {
+            echo "<script>alert('invalid username/password');
+            window.location.href= 'adminlogin.php';</script>";
+
+          }
+      }   
 ?>
   <head>
     <meta charset="UTF-8">

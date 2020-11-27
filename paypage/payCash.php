@@ -100,7 +100,7 @@ if($result->num_rows>0){
       
           <div class="clearfix">
             <a href="payment.php" ><button type="button"class="cancelbtn2">Cancel</button></a>
-            <button type="submit" class="signupbtn" name="Pay">Continue to checkout</button>
+            <button type="submit" class="signupbtn" name="Pay">Submit </button>
           </div>
       </div>
     </div>
@@ -112,7 +112,6 @@ if($result->num_rows>0){
     <input type="text" class="form-control" name="status" value="unpaid" style="display: none;" />
     <input type="text" class="form-control" name="receive" value="no" style="display: none;" />
     <input type="text" class="form-control" name="time_date" value="<?php echo  $_SESSION['time_date']; ?>" style="display: none;" />
-    <input type="text" class="form-control" name="msg" value="<?php echo $_SESSION['msg']; ?>" style="display: none;" />
     </form>
   </div>
 

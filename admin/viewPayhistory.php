@@ -52,7 +52,7 @@
         </div>
       </div>
     </div>			
-    <div class="container" style="margin-top:3%;margin-left:30%;">
+    <div class="container" style="margin-top:5%;margin-left:30%;">
       <div class="row">
         <div class="col-md-12 col-md-offset-0">
           <div class="panel panel-default panel-table">
@@ -83,7 +83,8 @@
                 <tbody>
                   <tr>
                     <?php 
-                      while($row = mysqli_fetch_array($result)) {   
+                      if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {  
                     ?>
                     <td><?php echo $row['id'];?></td>
                     <td><?php echo $row['order_id'];?></td>
@@ -98,6 +99,10 @@
                   </tr>
                   <?php
                       }
+                    }
+                    else { 
+                      echo "<tr><td class='text-center' colspan='7' >No payment yet </td></tr>";
+                    }
                   ?>
                 </tbody>
               </table>        

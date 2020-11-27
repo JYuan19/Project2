@@ -95,7 +95,7 @@ if(!isset($_SESSION['userEmail-foodtiger']))
                                     <input name="food_name" value="<?php echo $editData["food_name"]; ?>" style="display: none;">
                                     <input name="food_price" value="<?php echo $editData["food_price"]; ?>" style="display: none;">
                                     <input name="food_description" value="<?php echo  $editData["food_description"]; ?>" style="display: none;">
-                                    <button type="submit" name="add" class="btn btn-warning text-white" style="width:50%;font-family: Gill Sans, sans-serif;font-weight:bold;"><i class="fas fa-shopping-cart"></i> &nbsp;Add to Cart</button>
+                                    <button type="submit" name="update" class="btn btn-warning text-white" style="width:50%;font-family: Gill Sans, sans-serif;font-weight:bold;"><i class="fas fa-shopping-cart"></i> &nbsp;Add to Cart</button>
                                     <button type="submit" name="cancel" class="btn btn-danger text-white" style="width:45%;font-family: Gill Sans, sans-serif;font-weight:bold;">Cancel</button>
                                 </article> 
                             </aside> 

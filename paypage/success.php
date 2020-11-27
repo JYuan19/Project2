@@ -22,7 +22,7 @@ if(!isset($_SESSION['userEmail-foodtiger']))
 
   unset($_SESSION["cart"]);
   $Email = $_SESSION['userEmail-foodtiger'];
-  $sql = "select * from payment where email = '$Email' ";
+  $sql = "select * from payment LEFT JOIN cus_order ON cus_order.email = payment.email ORDER BY payment.email = '$Email'";
   $result=$conn->query($sql);
   if($result->num_rows>0){
     while($row=$result->fetch_assoc()){
@@ -85,15 +85,15 @@ if(!isset($_SESSION['userEmail-foodtiger']))
             <tbody>
               <tr>
                 <td><h5>Name: </h5></td>
-                <td><h5><?php echo  $_SESSION['Name_foodtiger']?></h5></td>
+                <td><h5><?php echo $_SESSION['Name_foodtiger']?></h5></td>
               </tr>
               <tr>
                 <td><h5>Phone Number:</h5</td>
-                <td><h5><?php echo  $_SESSION['PhoneNo']?></h5</td>
+                <td><h5><?php echo $_SESSION['PhoneNo']?></h5</td>
               </tr>
               <tr>
                 <td><h5>Address: </h5></td>
-                <td><h5><?php echo  $_SESSION['Address']?></h5></td>
+                <td><h5><?php echo $_SESSION['Address']?></h5></td>
               </tr>
             </tbody>
           </table>
@@ -111,19 +111,19 @@ if(!isset($_SESSION['userEmail-foodtiger']))
             <tbody>
               <tr>
                 <td style="width:52%;"><h5>Order ID: </h5></td>
-                <td><h5><?php echo  $_SESSION['order_id']?></h5></td>
+                <td><h5><?php echo $_SESSION['order_id']?></h5></td>
               </tr>
               <tr>
                 <td><h5>Time:</h5</td>
-                <td><h5><?php echo  $_SESSION['time_date']?></h5</td>
+                <td><h5><?php echo $_SESSION['time_date']?></h5</td>
               </tr>
               <tr>
                 <td><h5>Price: </h5></td>
-                <td><h5>RM <?php echo  $_SESSION['price']?></h5></td>
+                <td><h5>RM <?php echo $_SESSION['price']?></h5></td>
               </tr>
               <tr>
                 <td><h5>Message: </h5></td>
-                <td><h5><?php echo  $_SESSION['msg']?></h5></td>
+                <td><h5><?php echo $_SESSION['msg']?></h5></td>
               </tr>
             </tbody>
           </table>
@@ -132,7 +132,7 @@ if(!isset($_SESSION['userEmail-foodtiger']))
     </div>
   </div> 
   <div style="text-align: center;">
-    <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg" style="color:white;">Leave</button>
+    <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg" style="color:white;margin-bottom:30px;">Leave</button>
   </div>
 
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

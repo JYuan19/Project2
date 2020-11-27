@@ -125,7 +125,7 @@ if(!empty($_SESSION["cart"]))
               </div>
               <input type="text" class="form-control" name="order_id" value="<?php echo $generateid; ?>"  style="display: none;"/>
               <input type="text" class="form-control" name="email" value="<?php echo $_SESSION['userEmail']; ?>"  style="display: none;"/>
-              <button  type="submit" name="insert" class="btn btn-success pull-right">Checkout</button>
+              <button  type="submit" name="insert" class="btn btn-success pull-right">Pay Now</button>
             </form>
             </div>
         </div>

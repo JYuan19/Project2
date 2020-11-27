@@ -79,7 +79,8 @@
                   <tbody>
                     <tr>
                       <?php 
-                        while($row = mysqli_fetch_array($result)) {       
+                        if ($result->num_rows > 0) {
+                          while($row = $result->fetch_assoc()) {       
                       ?>
                       <td><a class="btn btn-warning" href ="feedbackdetail.php?id=<?php echo $row['id'];?>"><?php echo $row['Email'];?></a></td>
                       <td><?php echo $row['Name'];?></td>
@@ -89,6 +90,10 @@
                     </tr>
                     <?php
                         }
+                      }
+                      else { 
+                        echo "<tr><td class='text-center' colspan='7' >No feedback yet </td></tr>";
+                      }
                     ?>
                   </tbody>
                 </table>        

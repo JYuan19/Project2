@@ -27,7 +27,7 @@
                     $_SESSION['firstName'] = $row['firstName'];
                     $_SESSION['lastName'] = $row['lastName'];
                     $_SESSION['PhoneNo'] = $row['PhoneNo'];
-                    $_SESSION['Email'] = $row['Email'];
+                    $_SESSION['DeliveryEmail'] = $row['Email'];
                     $_SESSION['years'] = $row['years'];
                     $_SESSION['language'] = $row['language'];
                     $_SESSION['citizen'] = $row['citizen'];
@@ -67,7 +67,7 @@
                     <div class="form-group">
                         <label for="Email" class="col-md-3 control-label">Email:</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="Email" id="Email" value="<?php echo $_SESSION['Email'];?>">
+                            <input type="text" class="form-control" name="Email" id="Email" value="<?php echo $_SESSION['DeliveryEmail'];?>">
                         </div>
                     </div>
                     
@@ -79,12 +79,11 @@
                              </select>
                         </div>
                     </div>
-
+                    <br>
                     <input type="text" class="form-control" name="Password" value="$2y$10$U4pkflE7x9vTSuZe7U6Inu.1/Aac4QGIbplbvyihNEHzGfFKrSj.m" style="display: none;" />                            
-                    <!-- $2y$10$hsnlY8iBZ2ADuFVOAS3Em.Et1yA6VZqlMKOWXOx8QCqbW1XrR9xsK         -->
                     <div class="form-group">                                       
-                        <div class="col-md-offset-3 col-md-6">
-                            <button id="btn-signup" type="submit"  name="insert"class="btn btn-info btn-block"><i class="icon-hand-right"></i> Add New</button>              
+                        <div class="col-md-9">
+                            <button id="btn-signup" type="submit" name="insert" class="btn btn-info btn-block" style="width:100%;"><i class="icon-hand-right"></i> Add New</button>              
                         </div>
                     </div>    
                 </form>

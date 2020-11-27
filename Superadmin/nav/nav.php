@@ -2,8 +2,8 @@
 include "../database/connection.php";
 session_start(); 
 
-if (isset($_SESSION['Email'])) {
-	$Email = $_SESSION['Email'];
+if (isset($_SESSION['Superadmin'])) {
+	$Email = $_SESSION['Superadmin'];
 	$query = "SELECT * FROM admin WHERE Email = '$Email'" ; 
 	$result= mysqli_query($conn , $query);
 	if (mysqli_num_rows($result) > 0 ) {
@@ -103,7 +103,7 @@ if (isset($_SESSION['Email'])) {
                                 </li>
                                 <li class="nav-item">
                                     <a href="requestJob.php" class="nav-link text-light p-3 mb-2 sidebar-link"> <i class="fa fa-motorcycle text-light fa-lg mr-3" aria-hidden="true"></i>
-                                    Request Jobs List
+                                    Apply Jobs List
                                     </a>
                                 </li>
                                 <li class="nav-item">

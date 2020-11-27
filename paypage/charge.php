@@ -30,7 +30,6 @@
   $status = $_POST['status'];
   $receive = $_POST['receive'];
   $token= $_POST['stripeToken'];
-  $msg = $_POST['msg'];
 
 //create customer in stripe
   $customer = \Stripe\Customer::create(array(
@@ -59,7 +58,6 @@ $customerData = [
    'payment_way' => $payment_way,
    'status' => $status,
    'receive'=>$receive,
-   'msg'=>$msg
  ];
  
  // Instantiate Customer

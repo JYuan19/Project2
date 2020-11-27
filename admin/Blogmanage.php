@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <div class="container" style="margin-top:3%;margin-left:30%;">
+    <div class="container" style="margin-top:5%;margin-left:30%;">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <div class="panel panel-default panel-table">
@@ -81,7 +81,8 @@
                 </thead>
                 <tbody>
                   <?php
-                    while($row = mysqli_fetch_array($result)) {
+                    if ($result->num_rows > 0) {
+                      while($row = $result->fetch_assoc()) { 
                   ?>    
                   <tr>
                     <td align="center">
@@ -95,6 +96,11 @@
                   </tr>
                   <?php 
                     } 
+                  }
+                  else { 
+                    echo "<tr><td class='text-center' colspan='7' >No blog yet </td></tr>";
+                  }
+                    
                   ?>
                 </tbody>
               </table>

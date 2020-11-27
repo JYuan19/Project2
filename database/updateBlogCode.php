@@ -48,3 +48,5 @@
         } else {
             echo "<script>alert('Invalid !'); window.location.assign('../Superadmin/Blogmanage.php');</script>";
         }
+
+?>        

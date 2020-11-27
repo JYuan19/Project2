@@ -31,13 +31,12 @@ $gtotal = 0;
     $total = ($values["food_quantity"] * $values["food_price"]);
     $email=$_SESSION['userEmail'];
     $cust_id= $_SESSION['order_id'];
-    $msg= $_SESSION['msg'];
     $date_time=$_SESSION['time_date'];
     $order_id= $_SESSION['order_id'];
     
     $gtotal = $gtotal + $total;
-     $query = "INSERT INTO orders (cust_id,foodname, price,  quantity, email, msg, date_time) 
-              VALUES ('$cust_id',' $foodname ',' $price ',' $quantity ',' $email ','$msg','$date_time')";
+     $query = "INSERT INTO orders (cust_id,foodname, price,  quantity, email, date_time) 
+              VALUES ('$cust_id',' $foodname ',' $price ',' $quantity ',' $email ','$date_time')";
               $success = $conn->query($query);         
                echo "<script>window.location.href='../paypage/payment.php';</script>";
         
@@ -56,4 +55,4 @@ $gtotal = 0;
   }
 
 
-        ?>
+?>

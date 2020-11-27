@@ -14,10 +14,9 @@
       $status = $_POST['status'];
       $receive = $_POST['receive'];
       $time_date = $_POST['time_date'];
-      $msg = $_POST['msg'];
 
    
-   $sql = "INSERT into payment(id,order_id, email, Name, PhoneNo, Address,price,time_date,payment_way,status,receive, msg)values('$id','$order_id', '$email', '$Name', '$PhoneNo', '$Address','$price','$time_date','$payment_way','$status','$receive', '$msg')";
+   $sql = "INSERT into payment(id,order_id, email, Name, PhoneNo, Address,price,time_date,payment_way,status,receive)values('$id','$order_id', '$email', '$Name', '$PhoneNo', '$Address','$price','$time_date','$payment_way','$status','$receive')";
    $result=$conn->query($sql);
    echo "<script>window.location.assign('doneCash.php');</script>";
 }

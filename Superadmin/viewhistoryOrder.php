@@ -20,7 +20,7 @@
       require('../database/pdo.php');
       require('../database/mysql.php');
       require "nav/nav.php";
-      $sql = 'SELECT orders.cust_id, orders.foodname,orders.price,orders.quantity, payment.order_id FROM orders LEFT JOIN cus_order ON orders.cust_id = cus_order.custorder_id LEFT JOIN payment ON cus_order.order_id = payment.order_id';
+      $sql = 'SELECT * FROM orders LEFT JOIN cus_order ON orders.cust_id = cus_order.custorder_id LEFT JOIN payment ON cus_order.order_id = payment.order_id';
       $query  = $pdoconn->prepare($sql);
       $query->execute();
       $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -35,7 +35,8 @@
         $page = $_GET['page'];
       }
       $this_page_first_result = ($page-1)*$results_per_page;
-      $sql='SELECT * FROM orders LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
+      $sql='SELECT orders.order_id, orders.cust_id, orders.price, orders.foodname, orders.quantity, orders.email, orders.date_time, cus_order.msg, payment.receive FROM orders LEFT JOIN cus_order ON orders.cust_id = cus_order.order_id LEFT JOIN payment ON orders.cust_id = payment.order_id 
+      WHERE payment.receive = "no" LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
       $result = mysqli_query($conn, $sql);
     ?>
 		<div class="col-lg-9 col-xl-10 col-md-8 ml-auto fixed-top py-2 top-navbar" style="background-color: #ffbf55;">
@@ -55,7 +56,7 @@
     		
     <div class="container" style="margin-top:5%;margin-left:30%;">
       <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12 col-md-offset-1">
           <div class="panel panel-default panel-table">
             <div class="panel-heading">
               <div class="row">
@@ -74,24 +75,31 @@
                     <th>Food</th>
                     <th>Price</th>
                     <th>Quantity</th>
-                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Message</th>
                     <th>Time & Date</th>            
                   </tr> 
                 </thead>
                 <tbody>
                   <tr>
                     <?php  
-                      while($row = mysqli_fetch_array($result)) {      
+                      if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {   
                     ?>
                     <td><?php echo $row['order_id'];?></td>
-                    <td ><?php echo $row['cust_id'];?></td>
+                    <td><?php echo $row['cust_id'];?></td>
                     <td><?php echo $row['foodname'];?></td>
-                    <td><?php echo $row['price'];?></td>
+                    <td>RM <?php echo $row['price'];?></td>
                     <td><?php echo $row['quantity'];?></td>
-                    <td><?php echo $row['username'];?></td>
+                    <td><?php echo $row['email'];?></td>
+                    <td><?php echo $row['msg'];?></td>
                     <td><?php echo $row['date_time'];?></td>
                   </tr>
                   <?php
+                      }
+                    }
+                      else { 
+                        echo "<tr><td class='text-center' colspan='7'>No order yet </td></tr>";
                       }
                   ?>
                 </tbody>

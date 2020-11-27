@@ -1,5 +1,5 @@
 <?php
-$connect = new PDO("mysql:host=localhost;dbname=foodtiger", "root", "0612");
+$connect = new PDO("mysql:host=localhost;dbname=foodtiger", "root", "");
 
 if(isset($_POST["chat_id"]))
 {

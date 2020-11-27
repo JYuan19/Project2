@@ -102,7 +102,6 @@ $gtotal = 0;
         <input type="text" class="form-control" name="order_id" value="<?php echo  $_SESSION['order_id']; ?>" style="display: none;" />
         <input type="text" class="form-control" name="time_date" value="<?php echo  $_SESSION['time_date']; ?>"  style="display: none;"/>
         <input type="text" class="form-control" name="receive" value="no" style="display: none;" />
-        <input type="text" class="form-control" name="msg" value="<?php echo  $_SESSION['msg']; ?>"  style="display: none;"/>
         
         <hr class="mb-4">
         <label for="CreditNum">Credit card number</label>

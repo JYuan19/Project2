@@ -17,7 +17,7 @@
                 $_SESSION['firstName'] = $row['firstName'];
                 $_SESSION['lastName'] = $row['lastName'];
                 $_SESSION['PhoneNo'] = $row['PhoneNo'];
-                $_SESSION['Email'] = $row['Email'];
+                $_SESSION['DeliveryEmail'] = $row['Email'];
                 $_SESSION['years'] = $row['years'];
                 $_SESSION['language'] = $row['language'];
                 $_SESSION['citizen'] = $row['citizen'];
@@ -32,12 +32,11 @@
 <!DOCTYPE html>  
 <html>  
     <head>  
-        <title>FoodTiger</title>
+    <title>FoodTiger</title>
         <link rel="shortcut icon" type="image/x-icon" href="../image/logo 256x256.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">	
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -47,7 +46,7 @@
         <div class="col-lg-9 col-xl-10 col-md-8 ml-auto fixed-top py-2 top-navbar" style="background-color: #ffbf55;">
             <div class="row align-items-center">
                 <div class="col-md-9">
-                    <h4 class="text-light text-uppercase mb-0">Request Detail</h4>
+                    <h4 class="text-light text-uppercase mb-0">Apply Detail</h4>
                 </div>
                 <div class="col-md-3">
                     <ul class="navbar-nav">
@@ -75,7 +74,7 @@
                             <div class="row">
                                 <label for="Address" class="col-md-3 control-label">Email:</label>
                                 <div class="col-md-9">
-                                    <h5><?php echo $_SESSION['Email']; ?></h5>
+                                    <h5><?php echo $_SESSION['DeliveryEmail']; ?></h5>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +90,7 @@
                                 
                         <div class="form-group">
                             <div class="row">
-                                <label for="Price" class="col-md-3 control-label">18 years above or below:</label>
+                                <label for="Price" class="col-md-3 control-label">18 years above?:</label>
                                 <div class="col-md-9">
                                     <h5><?php echo $_SESSION['years']; ?></h5>
                                 </div>

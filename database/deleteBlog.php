@@ -44,5 +44,7 @@ if (!isset($_REQUEST['id'])) {
 
 		header('location: ../Superadmin/Blogmanage.php');
 
-    }
+	}
+	
+?>
 

@@ -72,7 +72,7 @@
     }, 1000);
     $(document).on('click', '.remove_chat', function(){
 		var chat_id = $(this).attr('id');
-		if(confirm("Are you sure you want to remove thisv chat?"))
+		if(confirm("Are you sure you want to remove this chat?"))
 		{
 			$.ajax({
 				url:"database/removechat.php",

@@ -101,7 +101,7 @@ $gtotal = 0;
           <hr class="mb-4">
             <div class="clearfix">
             <a href="payment.php" ><button type="button"class="cancelbtn2">Cancel</button></a>
-            <button type="submit" class="signupbtn" name="submit">Continue to checkout</button>
+            <button type="submit" class="signupbtn" name="submit">Pay with PayPal</button>
           </div>
         </form>
     </div>
