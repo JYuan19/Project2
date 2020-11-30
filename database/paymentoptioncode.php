@@ -21,38 +21,33 @@ if($result->num_rows>0){
   $_SESSION['time_date']='';
 }
 $gtotal = 0;
-  foreach($_SESSION["cart"] as $keys => $values)
-  {
-
-
-    $foodname = $values["food_name"];
-    $quantity = $values["food_quantity"];
-    $price =  $values["food_price"];
-    $total = ($values["food_quantity"] * $values["food_price"]);
-    $email= $_SESSION['userEmail-foodtiger'];
-    $cust_id= $_SESSION['order_id'];
-    $date_time=$_SESSION['time_date'];
-    $order_id= $_SESSION['order_id'];
+foreach($_SESSION["cart"] as $keys => $values)
+{
+  $foodname = $values["food_name"];
+  $quantity = $values["food_quantity"];
+  $price =  $values["food_price"];
+  $total = ($values["food_quantity"] * $values["food_price"]);
+  $email= $_SESSION['userEmail-foodtiger'];
+  $cust_id= $_SESSION['order_id'];
+  $date_time=$_SESSION['time_date'];
+  $order_id= $_SESSION['order_id'];
     
-    $gtotal = $gtotal + $total;
-     $query = "INSERT INTO orders (cust_id,foodname, price,  quantity, email, date_time) 
+  $gtotal = $gtotal + $total;
+  $query = "INSERT INTO orders (cust_id,foodname, price,  quantity, email, date_time) 
               VALUES ('$cust_id',' $foodname ',' $price ',' $quantity ',' $email ','$date_time')";
-              $success = $conn->query($query);         
-               echo "<script>window.location.href='../paypage/payment.php';</script>";
+  $success = $conn->query($query);         
+  echo "<script>window.location.href='../paypage/payment.php';</script>";
         
-      if(!$success)
-      { 
-        ?>
-        <div class="container">
-          <div class="jumbotron">
-            <h1>Something went wrong!</h1>
-            <p>Try again later.</p>
-          </div>
-        </div>
-        <?php
-	}      
-	
-  }
-
-
+  if(!$success)
+  { 
+  ?>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Something went wrong!</h1>
+        <p>Try again later.</p>
+      </div>
+    </div>
+  <?php
+	}      	
+}
 ?>

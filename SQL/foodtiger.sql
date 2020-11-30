@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2020 at 06:22 AM
+-- Generation Time: Nov 30, 2020 at 04:24 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -43,7 +43,8 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`ad_id`, `Name`, `Email`, `Password`, `Position`) VALUES
 (1, 'Foodtiger', 'admin@admin.com', '$2y$10$U4pkflE7x9vTSuZe7U6Inu.1/Aac4QGIbplbvyihNEHzGfFKrSj.m', 'Super Admin'),
 (2, 'HandsomeC', 'yeong4470@gmail.com', '$2y$10$bLnd7aj3muaETBOKSFJ/kuRyn2X2I3bsyL74v.pjIIoaI0JKIZ9g.', 'Admin'),
-(3, 'fdfdgr', '123@123gmail.com', '$2y$10$EXlUvS9HVIUmXRXgSqY1KOBryV41rgJbZ7R7PzvSi/TWXYYLaqunC', 'Deliver Man');
+(3, 'Deliver Man', '123@123gmail.com', '$2y$10$U4pkflE7x9vTSuZe7U6Inu.1/Aac4QGIbplbvyihNEHzGfFKrSj.m', 'Deliver Man'),
+(9, 'JY Wong', 'yuan-0619@hotmail.com', '$2y$10$U4pkflE7x9vTSuZe7U6Inu.1/Aac4QGIbplbvyihNEHzGfFKrSj.m', 'Admin');
 
 -- --------------------------------------------------------
 
@@ -67,7 +68,7 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `title`, `description`, `contain`, `image`, `time_date`, `Email`, `Author`) VALUES
-(1, 'Chinese Cuisine ', '  The most prominent regional cuisines in China are Anhui, Cantonese, Fujian, Hunan, Jiangsu, Shandong, Szechuan, and Zhejiang. Cantonese cuisine is famous all over the world for its distinctive style. Most dishes are steamed and stir-frying which makes it healthy and non-greasy.', 'A typical Chinese meal will have two things - a carbohydrate or starch like noodles, rice or buns, and accompanying stir fries or dishes of veggies, fish and meat. They use a lot of fresh vegetables like mushroom, water chestnuts, bamboo and even tofu', '../image/blog/chinese food.jpg', '2020-11-25 05:19:32', 'admin@admin.com', 'Foodtiger'),
+(1, 'Chinese Cuisine ', '    The most prominent regional cuisines in China are Anhui, Cantonese, Fujian, Hunan, Jiangsu, Shandong, Szechuan, and Zhejiang. Cantonese cuisine is famous all over the world for its distinctive style. Most dishes are steamed and stir-frying which makes it healthy and non-greasy.', 'A typical Chinese meal will have two things - a carbohydrate or starch like noodles, rice or buns, and accompanying stir fries or dishes of veggies, fish and meat. They use a lot of fresh vegetables like mushroom, water chestnuts, bamboo and even tofu', '../image/blog/chinese food.jpg', '2020-11-25 07:13:22', 'admin@admin.com', 'Foodtiger'),
 (2, 'Western Cuisine ', '  European or western cuisine is the cuisines of Europe and other Western countries, including the cuisines brought to other countries by European settlers and colonists. Sometimes the term \"European\", or more specifically \"continental\" cuisine, is used to refer more strictly to the cuisine of the western parts of mainland Europe.', 'East Asians contrast Western cuisine with Asian styles of cooking, the way Westerners refer to the varied cuisines of East Asia as Asian cuisine.', '../image/blog/western food.jpg', '2020-11-25 05:19:55', 'admin@admin.com', 'Foodtiger'),
 (3, 'Malay Cuisine ', '   Malay cuisine is the cooking tradition of ethnic Malays of Southeast Asia, residing in modern-day Malaysia, Indonesia (parts of Sumatra and Kalimantan), Singapore, Brunei, Southern Thailand and the Philippines (mostly southern) as well as in Cocos Islands, Sri Lanka and South Africa.', 'Mee goreng mamak. Mee goreng mamak, Apam balik. This is the ultimate Malaysian pancake, Nasi kerabu, Ayam percik (chicken with percik sauce), Nasi lemak, Roti john, Rendang (beef, chicken or lamb), Kuih.', '../image/blog/malay food.jpg', '2020-11-25 05:20:34', 'admin@admin.com', 'Foodtiger');
 
@@ -109,20 +110,17 @@ CREATE TABLE `chat` (
   `status` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `comment`
+-- Dumping data for table `chat`
 --
 
-CREATE TABLE `comment` (
-  `comment_id` int(11) NOT NULL,
-  `food_id` int(11) NOT NULL,
-  `parent_comment_id` int(11) NOT NULL,
-  `comment` varchar(200) CHARACTER SET utf8 NOT NULL,
-  `comment_sender_name` varchar(40) CHARACTER SET utf8 NOT NULL,
-  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `chat` (`id`, `to_user`, `from_user`, `message`, `time_date`, `status`) VALUES
+(1, 'yeong4470@gmail.com', 'admin', 'hi', '2020-11-25 07:59:47', 3),
+(2, 'admin', 'rjgaming0619@gmail.com', 'hi', '2020-11-25 08:36:38', 1),
+(3, 'yeong4470@gmail.com', 'admin', 'hi', '2020-11-25 08:01:17', 3),
+(4, 'yeong4470@gmail.com', 'admin', 'hi', '2020-11-25 08:06:44', 3),
+(5, 'yeong4470@gmail.com', 'admin', 'hi', '2020-11-25 08:06:44', 3),
+(6, 'yeong4470@gmail.com', 'admin', 'hi', '2020-11-26 03:19:01', 1);
 
 -- --------------------------------------------------------
 
@@ -169,6 +167,18 @@ CREATE TABLE `cus_order` (
   `time_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `cus_order`
+--
+
+INSERT INTO `cus_order` (`custorder_id`, `order_id`, `email`, `status`, `msg`, `time_date`) VALUES
+(3, '5fbdf51689eb2', 'rjgaming0619@gmail.com', 'done', 'This is for you!!', '2020-11-25 06:09:42'),
+(4, '5fbe25b30dcfe', 'rjgaming0619@gmail.com', 'done', '-', '2020-11-25 09:48:22'),
+(5, '5fbf0fb3ef7ef', 'rjgaming0619@gmail.com', 'done', '-', '2020-11-26 02:20:23'),
+(6, '5fbf11dc47c5f', 'rjgaming0619@gmail.com', 'done', 'aaa', '2020-11-26 02:24:33'),
+(8, '5fc06428e9512', 'rjgaming0619@gmail.com', 'done', '-', '2020-11-27 02:30:12'),
+(10, '5fc0658e0ba40', '', 'have not', '-', '2020-11-27 02:33:52');
+
 -- --------------------------------------------------------
 
 --
@@ -183,6 +193,13 @@ CREATE TABLE `feedback` (
   `feedback` varchar(255) NOT NULL,
   `suggestions` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `Email`, `Name`, `phone`, `feedback`, `suggestions`) VALUES
+(1, 'rjgaming0619@gmail.com', 'JYuan', '01201029311', 'excellent', 'This is so nice');
 
 -- --------------------------------------------------------
 
@@ -229,9 +246,19 @@ CREATE TABLE `orders` (
   `price` int(30) NOT NULL,
   `quantity` int(30) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `msg` varchar(255) NOT NULL,
   `date_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`cust_id`, `order_id`, `foodname`, `price`, `quantity`, `email`, `date_time`) VALUES
+('5fbdf51689eb2', 4, ' Pizza ', 12, 1, ' rjgaming0619@gmail.com ', '2020-11-25 06:09:34'),
+('5fbe25b30dcfe', 5, ' Pizza ', 12, 1, ' rjgaming0619@gmail.com ', '2020-11-25 09:37:00'),
+('5fbf0fb3ef7ef', 6, ' Pizza ', 12, 1, '  ', '2020-11-26 02:15:29'),
+('5fbf11dc47c5f', 7, ' Bak kut teh ', 8, 1, ' rjgaming0619@gmail.com ', '2020-11-26 02:24:30'),
+('5fc06428e9512', 10, ' Pizza ', 12, 1, '  ', '2020-11-27 02:27:54');
 
 -- --------------------------------------------------------
 
@@ -250,9 +277,19 @@ CREATE TABLE `payment` (
   `time_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `payment_way` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
-  `receive` varchar(255) NOT NULL,
-  `msg` varchar(255) NOT NULL
+  `receive` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`id`, `order_id`, `email`, `Name`, `PhoneNo`, `Address`, `price`, `time_date`, `payment_way`, `status`, `receive`) VALUES
+(1, '5fbdf51689eb2', 'rjgaming0619@gmail.com', 'JYuan', '01201029311', 'Jalanah h1h213', 13, '2020-11-25 06:09:34', 'cash', 'paid', 'yes'),
+(2, '5fbe25b30dcfe', 'rjgaming0619@gmail.com', 'JYuan', '01201029311', 'Jalanah h1h213', 13, '2020-11-25 09:37:00', 'cash', 'paid', 'yes'),
+(3, '5fbf0fb3ef7ef', 'rjgaming0619@gmail.com', 'JYuan', '01201029311', 'Jalanah h1h213', 13, '2020-11-26 02:15:29', 'cash', 'unpaid', 'no'),
+(4, '5fbf11dc47c5f', 'rjgaming0619@gmail.com', 'JYuan', '01201029311', 'Jalanah h1h213', 9, '2020-11-26 02:24:30', 'cash', 'unpaid', 'no'),
+(5, '5fc06428e9512', 'rjgaming0619@gmail.com', 'JYuan', '01201029311', 'Jalanah h1h213', 13, '2020-11-27 02:30:11', 'paypal', 'paid', 'no');
 
 -- --------------------------------------------------------
 
@@ -268,6 +305,16 @@ CREATE TABLE `paypal` (
   `currency` varchar(255) NOT NULL,
   `payment_status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `paypal`
+--
+
+INSERT INTO `paypal` (`id`, `payment_id`, `payer_id`, `amount`, `currency`, `payment_status`) VALUES
+(1, '5fbded3c2ab40', 'R3CX3DM53UCXW', 13.20, 'MYR', 'approved'),
+(2, '5fbdee88754ef', 'R3CX3DM53UCXW', 22.00, 'MYR', 'approved'),
+(3, '5fbdef219068c', 'R3CX3DM53UCXW', 22.00, 'MYR', 'approved'),
+(4, '5fc06428e9512', 'R3CX3DM53UCXW', 13.20, 'MYR', 'approved');
 
 -- --------------------------------------------------------
 
@@ -291,6 +338,14 @@ CREATE TABLE `requestjob` (
   `time_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `requestjob`
+--
+
+INSERT INTO `requestjob` (`id`, `firstName`, `lastName`, `PhoneNo`, `Email`, `years`, `language`, `citizen`, `validDriverLicense`, `vehicle`, `City`, `status`, `time_date`) VALUES
+(1, 'JY', 'Wong', '012010293 ', 'yuan-0619@hotmail.com', 'above', ' Malay', 'Yes', 'Valid', 'Motorcycle', 'Johor Bahru', 'approve', '2020-11-25 07:35:07'),
+(4, 'JY', 'Wong', '012010293 ', 'yuan-0619@hotmail.com1123', 'Yes', ' Malay', 'Yes', 'Valid', 'Car', 'Sarawak (Kuching,Sibu,Bintulu)', 'have not approve', '2020-11-26 06:18:53');
+
 -- --------------------------------------------------------
 
 --
@@ -306,6 +361,38 @@ CREATE TABLE `returnorder` (
   `statusreturn` varchar(255) CHARACTER SET utf8 NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `returnorder`
+--
+
+INSERT INTO `returnorder` (`id`, `order_id`, `name`, `reason`, `image`, `statusreturn`, `date`) VALUES
+(1, '5fbdf51689eb2', 'JYuan', 'Food is destroyed!!!', '../image/return/chinese food.jpg', 'Approve', '2020-11-25 07:48:47'),
+(2, '5fbe25b30dcfe', 'JYuan', 'aaa', '../image/return/indian food.jpg', 'Pending', '2020-11-26 03:27:15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `review`
+--
+
+CREATE TABLE `review` (
+  `comment_id` int(11) NOT NULL,
+  `food_id` int(11) NOT NULL,
+  `comment` varchar(200) CHARACTER SET utf8 NOT NULL,
+  `comment_sender_name` varchar(40) CHARACTER SET utf8 NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`comment_id`, `food_id`, `comment`, `comment_sender_name`, `date`) VALUES
+(1, 8, 'hi', 'JYuan', '2020-11-25 09:02:01'),
+(2, 8, 'hi', 'JYuan', '2020-11-25 09:04:05'),
+(3, 8, 'o', 'JYuan', '2020-11-25 09:05:20'),
+(4, 8, 'aaa', 'JYuan', '2020-11-25 09:06:12');
 
 -- --------------------------------------------------------
 
@@ -350,12 +437,6 @@ ALTER TABLE `category`
 --
 ALTER TABLE `chat`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `comment`
---
-ALTER TABLE `comment`
-  ADD PRIMARY KEY (`comment_id`);
 
 --
 -- Indexes for table `customer`
@@ -413,6 +494,12 @@ ALTER TABLE `returnorder`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`comment_id`);
+
+--
 -- Indexes for table `stripe`
 --
 ALTER TABLE `stripe`
@@ -426,13 +513,13 @@ ALTER TABLE `stripe`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ad_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ad_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -444,13 +531,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `comment`
---
-ALTER TABLE `comment`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -462,13 +543,13 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `cus_order`
 --
 ALTER TABLE `cus_order`
-  MODIFY `custorder_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `custorder_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `food`
@@ -480,31 +561,37 @@ ALTER TABLE `food`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `paypal`
 --
 ALTER TABLE `paypal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `requestjob`
 --
 ALTER TABLE `requestjob`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `returnorder`
 --
 ALTER TABLE `returnorder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `stripe`
