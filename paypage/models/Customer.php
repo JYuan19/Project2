@@ -8,7 +8,7 @@
 
     public function addCustomer($data) {
       // Prepare Query
-      $this->db->query('INSERT INTO payment (id,order_id,email,Name, PhoneNo,Address,price,time_date,payment_way,status,receive,msg) VALUES(:id,:order_id, :email,:Name, :PhoneNo,  :Address,:price,:time_date,:payment_way, :status, :receive,:msg)');
+      $this->db->query('INSERT INTO payment (id,order_id,email,Name, PhoneNo,Address,price,time_date,payment_way,status,receive) VALUES(:id,:order_id, :email,:Name, :PhoneNo,  :Address,:price,:time_date,:payment_way, :status, :receive)');
 
       // Bind Values
       $this->db->bind(':id', $data['id']);
@@ -22,7 +22,6 @@
       $this->db->bind(':payment_way', $data['payment_way']);
       $this->db->bind(':status', $data['status']);
       $this->db->bind(':receive', $data['receive']);
-      $this->db->bind(':msg', $data['msg']);
       
       // Execute
       if($this->db->execute()) {
