@@ -24,7 +24,6 @@ if (array_key_exists('paymentId', $_GET) && array_key_exists('PayerID', $_GET)) 
         $Address= $_SESSION['a']; 
         $order_id=$_SESSION['o'];
         $email=$_SESSION['e']; 
-        $msg=$_SESSION['m']; 
         $sql = "INSERT into payment(id,order_id, email, Name, PhoneNo, Address,price,payment_way,status,receive)values('','$order_id', '$email', '$Name', '$PhoneNo', '$Address','$amount','paypal','paid','no')";
         $result=$conn->query($sql);
         // Insert transaction data into the database
