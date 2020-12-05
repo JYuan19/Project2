@@ -21,7 +21,7 @@ if (isset($_POST['login'])) {
         $_SESSION['Name'] = $Name;
         $_SESSION['Email'] = $Email;
         $_SESSION['Superadmin'] = $row['Email'];
-        $_SESSION['SuperadminName'] = $row['Email'];
+        $_SESSION['SuperadminName'] = $row['Name'];
         header('location: adminhome.php');
       }
       else {
