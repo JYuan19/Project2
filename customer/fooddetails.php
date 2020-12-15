@@ -124,7 +124,7 @@ $_SESSION["food_id"] = $f_id;
                     <div class="form-group">
                         <input type="hidden" name="comment_id" id="comment_id" value="0" />
                         <input type="text" name="food_id" id="food_id" value="<?php echo $f_id; ?>" style="display:none;" >
-                        <input type="submit" name="submit" id="submit" class="btn btn-success" value="Submit" style="width:10%;height:3%"/>
+                        <input type="submit" name="submit" id="submit" class="btn btn-success" value="Send" style="width:10%;height:3%"/>
                     
                     </div>
                 </form>

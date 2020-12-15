@@ -50,12 +50,12 @@ if (isset($_SESSION['DeliveryEmail'])) {
                             FoodTiger Delivery 
                             </a>
 
-                            <img src="../image/avatar6.png" width="50"height="50" alt="nice" class="rounded-circle mr-3 ml-2">
+                            <img src="../image/avatar6.png" width="50" height="50" alt="nice" class="rounded-circle mr-3 ml-2">
                             <a href="deliveryProfile.php" class="text-white ">Welcome, <?php echo $Name;?> </a>
                             <div class="border-bottom pb-3"></div>
-                            <ul class="navbar-nav flex-column mt-4">
+                            <ul class="navbar-nav flex-column">
                                 <li class="nav-item">
-                                    <a href="delivery.php" class="nav-link text-light p-3 mb-2 sidebar-link"> <i class="fa fa-bars text-light fa-lg mr-3" aria-hidden="true"></i>
+                                    <a href="delivery.php" class="nav-link text-light p-3 mt-3 sidebar-link"> <i class="fa fa-bars text-light fa-lg mr-3" aria-hidden="true"></i>
                                     Delivery List
                                     </a>
                                 </li>

@@ -73,6 +73,20 @@
                         </a>
                     </label>
                 </div>
+
+                <div class="col-md-3 col-lg-3 col-sm-3">
+                    <label style="width:100%;">
+                        <a href="viewReviewList.php" class="img-fluid " style="text-decoration:none;color:black;" id="pic">
+                            <div class="panel panel-default card-input card card-body bg-light">
+                                <i class="fa fa-comment fa-lg mt-3 mb-3" aria-hidden="true" style="font-size:10em;"></i>
+                                <hr>
+                                <div class="panel-heading">
+                                    <h5>Review List</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </label>
+                </div>
                 
                 <div class="col-md-3 col-lg-3 col-sm-3">
                     <label style="width:100%;">
@@ -128,7 +142,9 @@
                             </div>
                         </a>
                     </label>
-                </div>               
+                </div>          
+                
+                <div class="col-md-3 col-lg-3 col-sm-3"></div>
                 
                 <div class="col-md-3 col-lg-3 col-sm-3">
                     <label style="width:100%;">

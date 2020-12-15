@@ -206,7 +206,7 @@ session_start();
                                     success: function (dataResult) {
                                         var dataResult = JSON.parse(dataResult);
                                         if (dataResult.statusCode == 200) {
-                                            alert('Send Successful Wait the Announcement');
+                                            alert('Send Successful Wait the Admin response');
                                             window.location = "Job.php";
                                         } else if (dataResult.statusCode == 201) {
 

@@ -32,82 +32,88 @@ if (isset($_SESSION['Superadmin'])) {
     </head>
     <body>
         <!-- navbar -->
-        <nav class="navbar navbar-expand-md  navbar-light">
+        <nav class="navbar navbar-expand-md navbar-light">
             <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse" data-target="#myNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-
-            <div class="collapse navbar-collapse " id="myNavbar">
+            <!-- style="overflow-y: scroll;" -->
+            <div class="collapse navbar-collapse" id="myNavbar">
                 <div class="container-fluid">
                     <div class="row">
                         <!-- sidebar navbar -->
-                        <div class="col-lg-3 col-xl-2 col-md-4 sidebar fixed-top">
+                        <div class="col-lg-3 col-xl-2 sidebar fixed-top" >
                             <a href="adminhome.php" class="navbar-brand text-white d-block mx-auto text-center mb-3 bottom-border pb-2">
                             FoodTiger
                             </a>
 
-                            <img src="../image/avatar6.png" width="50"height="50" alt="nice" class="rounded-circle mr-3 ml-2">
+                            <img src="../image/avatar6.png" width="50" height="50" alt="nice" class="rounded-circle mr-3 ml-2 ">
                             <a href="adminProfile.php" class="text-white ">Welcome, <?php echo $Name;?> </a>
                             <div class="border-bottom pb-3"></div>
-                            <ul class="navbar-nav flex-column mt-4">
+                            <ul class="navbar-nav flex-column">
                                 <li class="nav-item">
-                                    <a href="adminhome.php" class="nav-link text-light p-3 mb-2 sidebar-link "> <i class="fa fa-home text-light fa-lg mr-3" aria-hidden="true"></i> Dashboard
+                                    <a href="adminhome.php" class="nav-link text-light p-3 mt-3 sidebar-link "> <i class="fa fa-home text-light fa-lg mr-3" aria-hidden="true"></i>
+                                    Dashboard
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="adminpage.php" class="nav-link text-light p-3 mb-2 sidebar-link"><i class="fa fa-id-card-o text-light fa-lg mr-3" aria-hidden="true"></i>
+                                    <a href="adminpage.php" class="nav-link text-light p-3 sidebar-link"><i class="fa fa-id-card-o text-light fa-lg mr-3" aria-hidden="true"></i>
                                     Admin Management
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="viewCustomerAcc.php" class="nav-link text-light p-3 mb-2 sidebar-link"><i class="fa fa-user text-light fa-lg mr-3" aria-hidden="true"></i> 
+                                    <a href="viewCustomerAcc.php" class="nav-link text-light p-3 sidebar-link"><i class="fa fa-user text-light fa-lg mr-3" aria-hidden="true"></i> 
                                     Customer Management
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="food/food.php" class="nav-link text-light p-3 mb-2 sidebar-link"> <i class="fa fa-shopping-cart text-light fa-lg mr-3" aria-hidden="true"></i> 
+                                    <a href="food/food.php" class="nav-link text-light p-3 sidebar-link"> <i class="fa fa-shopping-cart text-light fa-lg mr-3" aria-hidden="true"></i> 
                                     Food Management
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="food/category.php" class="nav-link text-light p-3 mb-2 sidebar-link"> <i class="fa fa-table text-light fa-lg mr-3" aria-hidden="true"></i> 
+                                    <a href="food/category.php" class="nav-link text-light p-3 sidebar-link"> <i class="fa fa-table text-light fa-lg mr-3" aria-hidden="true"></i> 
                                     Category Management
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="Blogmanage.php" class="nav-link text-light p-3 mb-2 sidebar-link"> <i class="fa fa-file text-light fa-lg mr-3" aria-hidden="true"></i> 
+                                    <a href="viewReviewList.php" class="nav-link text-light p-3 sidebar-link"> <i class="fa fa-comment text-light fa-lg mr-3" aria-hidden="true"></i>
+                                    Review Food List
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="Blogmanage.php" class="nav-link text-light p-3 sidebar-link"> <i class="fa fa-file text-light fa-lg mr-3" aria-hidden="true"></i> 
                                     Blog Management
                                     </a>
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a href="viewhistoryOrder.php" class="nav-link text-light p-3 mb-2 sidebar-link"> <i class="fa fa-bars text-light fa-lg mr-3" aria-hidden="true"></i>
+                                    <a href="viewhistoryOrder.php" class="nav-link text-light p-3 sidebar-link"> <i class="fa fa-bars text-light fa-lg mr-3" aria-hidden="true"></i>
                                     Order List
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="viewPayhistory.php" class="nav-link text-light p-3 mb-2 sidebar-link"><i class="fa fa-money text-light fa-lg mr-3" aria-hidden="true"></i>
+                                    <a href="viewPayhistory.php" class="nav-link text-light p-3 sidebar-link"><i class="fa fa-money text-light fa-lg mr-3" aria-hidden="true"></i>
                                     Payment List
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="viewChatList.php" class="nav-link text-light p-3 mb-2 sidebar-link"> <i class="fa fa-weixin text-light fa-lg mr-3" aria-hidden="true"></i>
+                                    <a href="viewChatList.php" class="nav-link text-light p-3 sidebar-link"> <i class="fa fa-weixin text-light fa-lg mr-3" aria-hidden="true"></i>
                                     Online Chat List
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="viewfeedback.php" class="nav-link text-light p-3 mb-2 sidebar-link"> <i class="fa fa-wrench text-light fa-lg mr-3" aria-hidden="true"></i> 
+                                    <a href="viewfeedback.php" class="nav-link text-light p-3 sidebar-link"> <i class="fa fa-wrench text-light fa-lg mr-3" aria-hidden="true"></i> 
                                     Feedback
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="requestJob.php" class="nav-link text-light p-3 mb-2 sidebar-link"> <i class="fa fa-motorcycle text-light fa-lg mr-3" aria-hidden="true"></i>
+                                    <a href="requestJob.php" class="nav-link text-light p-3 sidebar-link"> <i class="fa fa-motorcycle text-light fa-lg mr-3" aria-hidden="true"></i>
                                     Apply Jobs List
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="returnorderlist.php" class="nav-link text-light p-3 mb-2 sidebar-link"> <i class="fa fa-envelope text-light fa-lg mr-3" aria-hidden="true"></i>
+                                    <a href="returnorderlist.php" class="nav-link text-light p-3 sidebar-link"> <i class="fa fa-envelope text-light fa-lg mr-3" aria-hidden="true"></i>
                                     Request Return List
                                     </a>
                                 </li>

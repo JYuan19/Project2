@@ -1,8 +1,6 @@
 body {
-    /* font-family: "Inconsolata", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; */
     font-weight: 300;
     font-size: 18px;
-   
 }
 .sidebar {
     height: 100vh;
@@ -42,9 +40,8 @@ body {
 
 .icon-parent{
     position: relative;
-
-
 }
+
 .icon-bullet::after{
     content: "";
     position: absolute;
@@ -54,8 +51,6 @@ body {
     width: 12px;
     background-color:#f44336;
     border-radius: 50%;
-
-
 }
 
 @media (max-width: 768px)
