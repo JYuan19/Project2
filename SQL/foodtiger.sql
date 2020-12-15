@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2020 at 04:24 AM
+-- Generation Time: Dec 15, 2020 at 02:34 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -43,8 +43,7 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`ad_id`, `Name`, `Email`, `Password`, `Position`) VALUES
 (1, 'Foodtiger', 'admin@admin.com', '$2y$10$U4pkflE7x9vTSuZe7U6Inu.1/Aac4QGIbplbvyihNEHzGfFKrSj.m', 'Super Admin'),
 (2, 'HandsomeC', 'yeong4470@gmail.com', '$2y$10$bLnd7aj3muaETBOKSFJ/kuRyn2X2I3bsyL74v.pjIIoaI0JKIZ9g.', 'Admin'),
-(3, 'Deliver Man', '123@123gmail.com', '$2y$10$U4pkflE7x9vTSuZe7U6Inu.1/Aac4QGIbplbvyihNEHzGfFKrSj.m', 'Deliver Man'),
-(9, 'JY Wong', 'yuan-0619@hotmail.com', '$2y$10$U4pkflE7x9vTSuZe7U6Inu.1/Aac4QGIbplbvyihNEHzGfFKrSj.m', 'Admin');
+(3, 'Deliver Man', '123@123gmail.com', '$2y$10$U4pkflE7x9vTSuZe7U6Inu.1/Aac4QGIbplbvyihNEHzGfFKrSj.m', 'Deliver Man');
 
 -- --------------------------------------------------------
 
@@ -120,7 +119,8 @@ INSERT INTO `chat` (`id`, `to_user`, `from_user`, `message`, `time_date`, `statu
 (3, 'yeong4470@gmail.com', 'admin', 'hi', '2020-11-25 08:01:17', 3),
 (4, 'yeong4470@gmail.com', 'admin', 'hi', '2020-11-25 08:06:44', 3),
 (5, 'yeong4470@gmail.com', 'admin', 'hi', '2020-11-25 08:06:44', 3),
-(6, 'yeong4470@gmail.com', 'admin', 'hi', '2020-11-26 03:19:01', 1);
+(6, 'yeong4470@gmail.com', 'admin', 'hi', '2020-12-05 05:57:11', 3),
+(7, 'grwg@rfver.com', 'admin', 'aaaa', '2020-12-04 01:55:40', 1);
 
 -- --------------------------------------------------------
 
@@ -177,7 +177,9 @@ INSERT INTO `cus_order` (`custorder_id`, `order_id`, `email`, `status`, `msg`, `
 (5, '5fbf0fb3ef7ef', 'rjgaming0619@gmail.com', 'done', '-', '2020-11-26 02:20:23'),
 (6, '5fbf11dc47c5f', 'rjgaming0619@gmail.com', 'done', 'aaa', '2020-11-26 02:24:33'),
 (8, '5fc06428e9512', 'rjgaming0619@gmail.com', 'done', '-', '2020-11-27 02:30:12'),
-(10, '5fc0658e0ba40', '', 'have not', '-', '2020-11-27 02:33:52');
+(10, '5fc0658e0ba40', '', 'have not', '-', '2020-11-27 02:33:52'),
+(13, '5fc4bb922c850', 'rjgaming0619@gmail.com', 'done', 'aa', '2020-11-30 09:29:59'),
+(15, '5fcb2936be1fd', 'rjgaming0619@gmail.com', 'done', '-', '2020-12-05 06:32:59');
 
 -- --------------------------------------------------------
 
@@ -258,7 +260,9 @@ INSERT INTO `orders` (`cust_id`, `order_id`, `foodname`, `price`, `quantity`, `e
 ('5fbe25b30dcfe', 5, ' Pizza ', 12, 1, ' rjgaming0619@gmail.com ', '2020-11-25 09:37:00'),
 ('5fbf0fb3ef7ef', 6, ' Pizza ', 12, 1, '  ', '2020-11-26 02:15:29'),
 ('5fbf11dc47c5f', 7, ' Bak kut teh ', 8, 1, ' rjgaming0619@gmail.com ', '2020-11-26 02:24:30'),
-('5fc06428e9512', 10, ' Pizza ', 12, 1, '  ', '2020-11-27 02:27:54');
+('5fc06428e9512', 10, ' Pizza ', 12, 1, '  ', '2020-11-27 02:27:54'),
+('5fc4bb922c850', 19, ' Pizza ', 12, 1, ' rjgaming0619@gmail.com ', '2020-11-30 09:29:55'),
+('5fcb2936be1fd', 22, ' Burger ', 8, 1, ' rjgaming0619@gmail.com ', '2020-12-05 06:31:19');
 
 -- --------------------------------------------------------
 
@@ -289,7 +293,9 @@ INSERT INTO `payment` (`id`, `order_id`, `email`, `Name`, `PhoneNo`, `Address`, 
 (2, '5fbe25b30dcfe', 'rjgaming0619@gmail.com', 'JYuan', '01201029311', 'Jalanah h1h213', 13, '2020-11-25 09:37:00', 'cash', 'paid', 'yes'),
 (3, '5fbf0fb3ef7ef', 'rjgaming0619@gmail.com', 'JYuan', '01201029311', 'Jalanah h1h213', 13, '2020-11-26 02:15:29', 'cash', 'unpaid', 'no'),
 (4, '5fbf11dc47c5f', 'rjgaming0619@gmail.com', 'JYuan', '01201029311', 'Jalanah h1h213', 9, '2020-11-26 02:24:30', 'cash', 'unpaid', 'no'),
-(5, '5fc06428e9512', 'rjgaming0619@gmail.com', 'JYuan', '01201029311', 'Jalanah h1h213', 13, '2020-11-27 02:30:11', 'paypal', 'paid', 'no');
+(5, '5fc06428e9512', 'rjgaming0619@gmail.com', 'JYuan', '01201029311', 'Jalanah h1h213', 13, '2020-11-27 02:30:11', 'paypal', 'paid', 'no'),
+(6, '5fc4bb922c850', 'rjgaming0619@gmail.com', 'JYuan', '01201029311', 'Jalanah h1h213', 13, '2020-11-30 09:29:55', 'cash', 'paid', 'yes'),
+(7, '5fcb2936be1fd', 'rjgaming0619@gmail.com', 'JYuan', '01201029311', 'Jalanah h1h213', 9, '2020-12-05 06:32:59', 'paypal', 'paid', 'no');
 
 -- --------------------------------------------------------
 
@@ -314,7 +320,8 @@ INSERT INTO `paypal` (`id`, `payment_id`, `payer_id`, `amount`, `currency`, `pay
 (1, '5fbded3c2ab40', 'R3CX3DM53UCXW', 13.20, 'MYR', 'approved'),
 (2, '5fbdee88754ef', 'R3CX3DM53UCXW', 22.00, 'MYR', 'approved'),
 (3, '5fbdef219068c', 'R3CX3DM53UCXW', 22.00, 'MYR', 'approved'),
-(4, '5fc06428e9512', 'R3CX3DM53UCXW', 13.20, 'MYR', 'approved');
+(4, '5fc06428e9512', 'R3CX3DM53UCXW', 13.20, 'MYR', 'approved'),
+(5, '5fcb2936be1fd', 'R3CX3DM53UCXW', 8.80, 'MYR', 'approved');
 
 -- --------------------------------------------------------
 
@@ -344,7 +351,8 @@ CREATE TABLE `requestjob` (
 
 INSERT INTO `requestjob` (`id`, `firstName`, `lastName`, `PhoneNo`, `Email`, `years`, `language`, `citizen`, `validDriverLicense`, `vehicle`, `City`, `status`, `time_date`) VALUES
 (1, 'JY', 'Wong', '012010293 ', 'yuan-0619@hotmail.com', 'above', ' Malay', 'Yes', 'Valid', 'Motorcycle', 'Johor Bahru', 'approve', '2020-11-25 07:35:07'),
-(4, 'JY', 'Wong', '012010293 ', 'yuan-0619@hotmail.com1123', 'Yes', ' Malay', 'Yes', 'Valid', 'Car', 'Sarawak (Kuching,Sibu,Bintulu)', 'have not approve', '2020-11-26 06:18:53');
+(4, 'JY', 'Wong', '012010293 ', 'yuan-0619@hotmail.com1123', 'Yes', ' Malay', 'Yes', 'Valid', 'Car', 'Sarawak (Kuching,Sibu,Bintulu)', 'have not approve', '2020-12-07 10:04:10'),
+(5, 'aa', 'aaa', '012010293 ', 'uuu', 'Yes', ' Malay', 'Yes', 'Valid', 'Car', 'Johor Bahru', 'have not approve', '2020-12-05 06:02:06');
 
 -- --------------------------------------------------------
 
@@ -531,7 +539,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -543,7 +551,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `cus_order`
 --
 ALTER TABLE `cus_order`
-  MODIFY `custorder_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `custorder_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -561,25 +569,25 @@ ALTER TABLE `food`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `order_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `paypal`
 --
 ALTER TABLE `paypal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `requestjob`
 --
 ALTER TABLE `requestjob`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `returnorder`
