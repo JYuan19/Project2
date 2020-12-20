@@ -184,13 +184,14 @@ session_start();
       <h2>Blogs</h2>
       <div class="card-deck" style="margin-top:5%;">
         <?php
-        $query = "SELECT * FROM blog limit 3";
-        $run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
-        if (mysqli_num_rows($run_query) > 0) {
-          while ($row = mysqli_fetch_array($run_query)) {
-            $id = $row['id'];
-            $title = $row['title'];
-            $image = $row['image'];
+        if(isset($_SESSION['userEmail-foodtiger'])){
+          $query = "SELECT * FROM blog limit 3";
+          $run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
+          if (mysqli_num_rows($run_query) > 0) {
+            while ($row = mysqli_fetch_array($run_query)) {
+              $id = $row['id'];
+              $title = $row['title'];
+              $image = $row['image'];        
         ?>
             <div class="card">
               <div class="inner">
@@ -201,6 +202,28 @@ session_start();
               </div>
             </div>
         <?php
+            }
+          }
+        } else {
+          $query = "SELECT * FROM blog limit 3";
+          $run_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
+          if (mysqli_num_rows($run_query) > 0) {
+            while ($row = mysqli_fetch_array($run_query)) {
+              $id = $row['id'];
+              $title = $row['title'];
+              $image = $row['image'];
+
+        ?>
+        <div class="card">
+          <div class="inner">
+            <a href="#" data-toggle="modal" data-target="#login_form"><img class="card-img-top" src="image/<?php echo $row['image']; ?>" alt="<?php echo $row['title']; ?>"></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><?php echo $row['title']; ?></h5>
+          </div>
+        </div>
+        <?php
+              }
           }
         }
         ?>
