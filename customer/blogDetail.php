@@ -21,6 +21,10 @@ if(isset($_GET['id'])){
 	}
 }
 
+if(!isset($_SESSION['userEmail-foodtiger'])){
+	header("location:../index.php");
+}
+
 
 ?>
 
