@@ -83,7 +83,17 @@ $total_pages = ceil($total_records / $limit);
     <div class="container-fluid">
       <div class="row">
         <div class="leftcolumn">
+          <?php 
+          if(isset($_SESSION['userEmail-foodtiger'])){
+          ?>
           <div id="target-content">Loading...</div>
+          <?php
+          } else{
+          ?>
+          <div id="target-content2">Loading...</div>
+          <?php
+          }
+          ?>
           <div class="col col-xs-8">
             <ul class="pagination" style="float: right;margin-top:10px">
             
@@ -192,4 +202,29 @@ $total_pages = ceil($total_records / $limit);
       });
     });
   });
+
+
+  $(document).ready(function () {
+    $("#target-content2").load("../database/blogpagination2.php?page=1");
+    $(".page-link").click(function () {
+      var id = $(this).attr("data-id");
+      var select_id = $(this).parent().attr("id");
+      $.ajax({
+        url: "../database/blogpagination2.php",
+        type: "GET",
+        data: {
+          page: id
+        },
+        cache: false,
+        success: function (dataResult) {
+          $("#target-content2").html(dataResult);
+          $(".pageitem").removeClass("active");
+          $("#" + select_id).addClass("active");
+
+        }
+      });
+    });
+  });
 </script>
+
+
