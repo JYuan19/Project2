@@ -1,6 +1,6 @@
 <?php
 
-$connect = new PDO("mysql:host=localhost; dbname=foodtiger", "root", "0612");
+$connect = new PDO("mysql:host=localhost; dbname=foodtiger", "root", "");
 if (isset($_SESSION['userEmail-foodtiger'])) {
   $limit = '9';
   $page = 1;
@@ -9,13 +9,13 @@ if (isset($_SESSION['userEmail-foodtiger'])) {
     $page = $_POST['page'];
   } else {
     $start = 0;
-  }
+}
 
-  $query = "SELECT * FROM food ";
+$query = "SELECT * FROM food ";
 
-  if ($_POST['query'] != '') {
-    $query .= 'WHERE nameFood LIKE "%' . str_replace(' ', '%', $_POST['query']) . '%"';
-  }
+if ($_POST['query'] != '') {
+  $query .= 'WHERE nameFood LIKE "%' . str_replace(' ', '%', $_POST['query']) . '%"';
+}
 
   $query .= 'ORDER BY f_id ASC ';
 
@@ -49,7 +49,6 @@ if (isset($_SESSION['userEmail-foodtiger'])) {
         </div>
     </div> 
          
-
     ';
     }
   } else {
