@@ -1,24 +1,23 @@
 <?php
 include "../database/connection.php";
-session_start();  
+session_start();
 require '../database/pdo.php';
 $sql = 'SELECT * FROM food';
 $query  = $pdoconn->prepare($sql);
 $query->execute();
 
-$page = @$_GET['page'];			
-if($page == 0 || $page == 1){
-    $page1 = 0;	
+$page = @$_GET['page'];
+if ($page == 0 || $page == 1) {
+  $page1 = 0;
+} else {
+  $page1 = ($page * 6) - 6;
 }
-else {
-    $page1 = ($page * 6) - 6;	
+$search = "";
+if (isset($_REQUEST['search'])) {
+  $search = " and nameFood like '%" . $_REQUEST['search'] . "%'or description like '%" . $_REQUEST['search'] . "%'";
 }
-$search="";
-if(isset($_REQUEST['search'])){
-    $search=" and nameFood like '%".$_REQUEST['search']."%'or description like '%".$_REQUEST['search']."%'";
-}
-$sql="select f_id,nameFood,description,imageFood,price from food where ".$search." LIMIT ".$page1.", 6";
-$result=$conn->query($sql); 
+$sql = "select f_id,nameFood,description,imageFood,price from food where " . $search . " LIMIT " . $page1 . ", 6";
+$result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,14 +36,13 @@ $result=$conn->query($sql);
 
 <body>
   <header>
-    <?php 
-          require "navandfooter/nav.php";
+    <?php
+    require "navandfooter/nav.php";
 
-          if(isset($_SESSION['userEmail-foodtiger']))
-          {
-            require "chat.php";
-          } 
-        ?>
+    if (isset($_SESSION['userEmail-foodtiger'])) {
+      require "chat.php";
+    }
+    ?>
   </header>
   <div class="in1">
     <!-- Carousel -->
@@ -84,52 +82,99 @@ $result=$conn->query($sql);
         <span class="carousel-control-next-icon"></span>
       </a>
     </div>
+    <?php
+    if (isset($_SESSION['userEmail-foodtiger'])) {
+    ?>
+      <div class="container" style="margin-top:3%;">
+        <h2>Foods</h2>
+        <form style="margin-top:3%;" action="food.php" method="POST">
+          <input type="text" name="search" placeholder="Search..." id="search">
+        </form>
+      </div>
+      <div id="food"></div>
+    <?php
+    } else {
+    ?>
+      <div class="container" style="margin-top:3%;">
+        <h2>Foods</h2>
+        <form style="margin-top:3%;" action="food.php" method="POST">
+          <input type="text" name="search" placeholder="Search..." id="search2">
+        </form>
+      </div>
+      <div id="foodneedlogin"></div>
+    <?php
+    }
+    ?>
 
-    <div class="container" style="margin-top:3%;">
-      <h2>Foods</h2>
-      <form style="margin-top:3%;" action="food.php" method="POST">
-        <input type="text" name="search" placeholder="Search..." id="search">
-      </form>
-    </div>
-    <div id="food"></div>  
   </div>
-  
+
 
   <footer style="margin-top:5%;">
-    <?php 
-          require "navandfooter/footer.php";
-        ?>
+    <?php
+    require "navandfooter/footer.php";
+    ?>
   </footer>
 </body>
 
 </html>
 
 <script>
-  $(document).ready(function(){
+  $(document).ready(function() {
 
     load_data(1);
 
-    function load_data(page, query = '')
-    {
+    function load_data(page, query = '') {
       $.ajax({
-        url:"AjaxFood.php",
-        method:"POST",
-        data:{page:page, query:query},
-        success:function(data)
-        {
+        url: "AjaxFood.php",
+        method: "POST",
+        data: {
+          page: page,
+          query: query
+        },
+        success: function(data) {
           $('#food').html(data);
         }
       });
     }
 
-    $(document).on('click', '.page-link', function(){
+    $(document).on('click', '.page-link', function() {
       var page = $(this).data('page_number');
       var query = $('#search').val();
       load_data(page, query);
     });
 
-    $('#search').keyup(function(){
+    $('#search').keyup(function() {
       var query = $('#search').val();
+      load_data(1, query);
+    });
+
+  });
+  $(document).ready(function() {
+
+    load_data(1);
+
+    function load_data(page, query = '') {
+      $.ajax({
+        url: "AjaxFood2.php",
+        method: "POST",
+        data: {
+          page: page,
+          query: query
+        },
+        success: function(data) {
+          $('#foodneedlogin').html(data);
+        }
+      });
+    }
+
+    $(document).on('click', '.page-link', function() {
+      var page = $(this).data('page_number');
+      var query = $('#search2').val();
+      load_data(page, query);
+    });
+
+    $('#search2').keyup(function() {
+      var query = $('#search2').val();
       load_data(1, query);
     });
 
