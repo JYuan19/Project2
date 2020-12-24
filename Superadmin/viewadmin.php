@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>FoodTiger - View Admin</title>
+    <title>FoodTiger</title>
     <link rel="shortcut icon" type="image/x-icon" href="../image/logo 256x256.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
