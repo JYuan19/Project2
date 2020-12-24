@@ -55,7 +55,7 @@
               </div>
             </div>
             <div class="panel-body">
-              <table class="table table-striped table-bordered table-list" style="box-shadow: 5px 7px 25px #999;">
+              <table class="table table-bordered table-list" style="box-shadow: 5px 7px 25px #999;">
                 <thead>
                   <tr>
                     <th>Email</th>        
