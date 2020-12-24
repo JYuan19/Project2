@@ -39,7 +39,7 @@
       <div class="col-lg-9 col-xl-10 col-md-8 ml-auto fixed-top py-2 top-navbar" style="background-color: #ffbf55;">
         <div class="row align-items-center">
           <div class="col-md-9">
-              <h4 class="text-light text-uppercase mb-0">Worker List </h4>
+              <h4 class="text-light text-uppercase mb-0">Employees List </h4>
           </div>
           <div class="col-md-3">
             <ul class="navbar-nav">
@@ -54,7 +54,7 @@
       <div class="container" style="margin-top:10%;margin-left:30%;">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <h1>Worker List <a href="adminpage.php" style="text-decoration:none;">Back</a></h1>
+            <h1>Employees List <a href="adminpage.php" style="text-decoration:none;">Back</a></h1>
               <div class="panel panel-default panel-table">
                 <div class="panel-body">
                   <table class="table table-striped table-bordered table-list" style="box-shadow: 5px 7px 25px #999;">
