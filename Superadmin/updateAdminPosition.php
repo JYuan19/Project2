@@ -67,7 +67,8 @@
                             <div class="form-group">
                                 <label for="Email" class="col-md-3">Email:</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="Email" id="Email" value="<?php if (isset($_GET['ad_id'])){echo $Email; }?>" disabled>
+                                    <input type="text" class="form-control" value="<?php if (isset($_GET['ad_id'])){echo $Email; }?>" disabled>
+                                    <input type="text" class="form-control" name="Email" id="Email" value="<?php if (isset($_GET['ad_id'])){echo $Email; }?>" style="display: none;">
                                 </div>
                             </div>
                             <div class="form-group">
