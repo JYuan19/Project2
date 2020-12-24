@@ -25,7 +25,8 @@
       $query->execute();
       $arr_all = $query->fetchAll(PDO::FETCH_ASSOC);
       $results_per_page = 6;
-      $sql='SELECT * FROM orders';
+      $sql='SELECT orders.order_id, orders.cust_id, orders.price, orders.foodname, orders.quantity, orders.email, orders.date_time, cus_order.msg, payment.receive FROM orders LEFT JOIN cus_order ON orders.cust_id = cus_order.order_id LEFT JOIN payment ON orders.cust_id = payment.order_id 
+      WHERE payment.receive = "no"';
       $result = mysqli_query($conn, $sql);
       $number_of_results = mysqli_num_rows($result);
       $number_of_pages = ceil($number_of_results/$results_per_page);
