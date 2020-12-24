@@ -45,7 +45,7 @@
                             <i class="fa fa-user-circle fa-lg mr-3 mt-3 mb-3 ml-3" aria-hidden="true" style="font-size:10em;"></i>
                         <hr>
                         <div class="panel-heading">
-                            <h5>View Worker</h5>
+                            <h5>View Employees</h5>
                         </div>
                         </div>
                     </a>
