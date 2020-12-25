@@ -22,7 +22,6 @@
         $_SESSION['ad_id'] = $cus_id;
         $_SESSION['Name'] = $Name;
         $_SESSION['Email'] = $Email;
-        $_SESSION['DeliveryName'] = $row['Name'];
         $_SESSION['DeliveryEmail'] = $row['Email'];
         header('location: delivery.php');
       }
