@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>FoodTiger - Add Admin</title>
+        <title>FoodTiger</title>
         <link rel="shortcut icon" type="image/x-icon" href="../image/logo 256x256.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
@@ -21,7 +21,7 @@
         <div class="col-lg-9 col-xl-10 col-md-8 ml-auto fixed-top py-2 top-navbar" style="background-color: #ffbf55;">
             <div class="row align-items-center">
                 <div class="col-md-9">
-                    <h4 class="text-light text-uppercase mb-0">Add Admin </h4>
+                    <h4 class="text-light text-uppercase mb-0">Add Admin</h4>
                 </div>
                 <div class="col-md-3">
                     <ul class="navbar-nav">
@@ -64,7 +64,7 @@
                         <div class="form-group">
                             <div class="row ml-1">                                     
                                 <div class="col-md-4">
-                                    <button id="btn-signup" type="submit"  name="update"class="btn btn-info btn-block">Add</button>
+                                    <button id="btn-signup" type="submit"  name="insert" class="btn btn-info btn-block">Add</button>
                                 </div>
                                 <div class="col-md-4">
                                     <a href="adminpage.php" class="btn btn-info btn-block btn-danger">Cancel</a>
