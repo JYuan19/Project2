@@ -44,6 +44,9 @@ By developing this project, we can achieve the objective below
 
 We choose this topic because we want to improve our programming language skill in PHP and MySQL. We can also learn more technique for developing a system through this final year project.
 
+## Gantt Chart
+- Due to the excel template limitation, milestone is not available.
+
 ### Built With
 
 * [Bootstrap](https://getbootstrap.com)
