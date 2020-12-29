@@ -23,7 +23,6 @@ if(isset($_POST["add"]))
       'food_quantity' => $_POST["quantity"],
       );
       $_SESSION["cart"][$count] = $item_array;
-      echo '<script>alert("Added succesful!")</script>';
       echo '<script>window.location="cart.php"</script>';
     }   
     else
