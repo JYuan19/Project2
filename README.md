@@ -46,6 +46,7 @@ We choose this topic because we want to improve our programming language skill i
 
 ## Gantt Chart
 - Due to the excel template limitation, milestone is not available.
+<a href="https://github.com/JYuan19/Project2/tree/master/GanttChart"><strong>Explore the Gantt Chart »</strong></a>
 
 ### Built With
 
