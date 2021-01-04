@@ -445,7 +445,7 @@ session_start();
                                 var dataResult = JSON.parse(dataResult);
                                 if (dataResult.statusCode == 200) {
                                   alert('Registration Successful');
-                                  window.location = "foodpage.php";
+                                  window.location = "database/registerAfterlogin.php";
                                 } else if (dataResult.statusCode == 201) {
                                   exists.style.display = "block";
                                   passwordLen.style.display = "none";
