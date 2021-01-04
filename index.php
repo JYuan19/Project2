@@ -426,7 +426,7 @@ session_start();
                   if (password == password2) {
                     if (name.length > min && name.length < max) {
                       if (mail.test(email)) {
-                        if (phoneNO.length > phmin && password.length < phmax) {
+                        if (phoneNO.length >= phmin && phoneNO.length <= phmax) {
                           if (password.length > passmin && password.length < passmax) {
 
                             $.ajax({
