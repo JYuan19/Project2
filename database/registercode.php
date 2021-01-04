@@ -27,9 +27,6 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 				echo json_encode(array("statusCode"=>200));
 				
 			} 
-			else {
-				echo json_encode(array("statusCode"=>201));
-			}
 		}
 		mysqli_close($conn);
 	}
