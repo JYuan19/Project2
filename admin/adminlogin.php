@@ -20,8 +20,6 @@
       
           if (password_verify($Password, $pass )) {
             $_SESSION['ad_id'] = $cus_id;
-            $_SESSION['Name'] = $Name;
-            $_SESSION['Email'] = $Email;
             $_SESSION['adminName'] = $row['Name'];
             $_SESSION['adminEmail'] = $row['Email'];
             header('location: adminhome.php');
