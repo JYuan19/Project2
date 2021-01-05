@@ -18,8 +18,6 @@ if (isset($_POST['login'])) {
   
       if (password_verify($Password, $pass )) {
         $_SESSION['ad_id'] = $ad_id;
-        $_SESSION['Name'] = $Name;
-        $_SESSION['Email'] = $Email;
         $_SESSION['Superadmin'] = $row['Email'];
         $_SESSION['SuperadminName'] = $row['Name'];
         header('location: adminhome.php');
